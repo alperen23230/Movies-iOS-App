@@ -26,11 +26,15 @@ class UpcomingCell: UICollectionViewCell, SelfConfiguringCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         configureLabels()
         configureImageViews()
         configureSeperator()
         configureViews()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
     }
 
     @available(*, unavailable)
